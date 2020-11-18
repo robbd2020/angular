@@ -6,17 +6,8 @@ import { Contact } from 'src/app/models/contact';
   templateUrl: './contact-list.component.html',
   styleUrls: ['./contact-list.component.css']
 })
-export class ContactListComponent implements OnInit {
-  @Input() contacts: Contact[];
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-
-  edit(c: Contact): void  {
-    c.edit = !c.edit;
-  }
+export class ContactListComponent {
+  @Input() contacts: Contact[] = {} as Contact[];
 
   delete(c: Contact): void{
     const i = this.contacts.indexOf(c);

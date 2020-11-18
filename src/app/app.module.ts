@@ -10,6 +10,7 @@ import { FormDemoComponent } from './components/form-demo/form-demo.component';
 import { HomeComponent } from './pages/home/home';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { ContactListComponent } from './components/contact-list/contact-list.component';
+import { ContactRowComponent } from './components/contact-row/contact-row.component';
 
 let routes: Route[]=[
   {path:'datepicker', component: DatePickerComponent},
@@ -25,7 +26,8 @@ let routes: Route[]=[
     FormDemoComponent,
     HomeComponent,
     ContactFormComponent,
-    ContactListComponent
+    ContactListComponent,
+    ContactRowComponent
   ],
   imports: [      //componenten van een ander die ik nodig heb
     BrowserModule,
