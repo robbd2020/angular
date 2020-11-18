@@ -1,0 +1,19 @@
+<form (ngSubmit)="addContact()" novalidate #f="ngForm">
+    <div>
+        <label for="inputFirstName">First name:</label>
+        <input type="text" [(ngModel)]="newContact.firstName" name="firstName" id="inputFirstName" required>
+    </div>
+    <div>
+        <label for="inputSurname">Surname:</label>
+        <input type="text" [(ngModel)]="newContact.surname" name="surname" id="inputSurname" required>
+    </div>
+    <div>
+        <label for="inputEmail">E-mail address:</label>
+        <input type="text" [(ngModel)]="newContact.email" name="email" #mail="ngModel" id="inputEmail" required
+            minlength=4>
+        <div *ngIf="mail.dirty && mail.invalid">
+            This is so invalid.
+        </div>
+        <button [disabled]="f.invalid">Add</button>
+    </div>
+</form>

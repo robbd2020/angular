@@ -1,0 +1,29 @@
+<h2>The contacts</h2>
+
+<table class="table">
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">E-mail addreeeeeess</th>
+    <th scope="col"></th>
+  </tr>
+  <tr scope="row" *ngFor="let contact of contacts">    
+    <td *ngIf="!contact.edit"> {{contact.firstName}} {{contact.surname}}</td>
+    <td *ngIf="contact.edit">
+      <input type="text" [(ngModel)]="contact.firstName" name="firstName" id="inputFirstName">
+      <input type="text" [(ngModel)]="contact.surname" name="surname" id="inputSurname">
+    </td>
+    <td *ngIf="!contact.edit">{{contact.email}}</td>
+    <td *ngIf="contact.edit"><input type="text" [(ngModel)]="contact.email" name="email" id="inputEmail"></td>
+    <td>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button class="btn btn-primary" (click)="edit(contact)">
+          <td *ngIf="!contact.edit">Edit</td>
+          <td *ngIf="contact.edit">Save</td>
+    </button>
+    <button class="btn btn-danger" (click)="delete(contact)">
+      <td>Delete</td>
+    </button>
+    </div>
+    </td>
+  </tr>
+</table>
