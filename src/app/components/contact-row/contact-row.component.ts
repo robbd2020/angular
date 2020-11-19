@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Contact } from 'src/app/models/contact';
+import {ContactService} from '../../service/contact.service';
 
 @Component({
   selector: '[contact-row]',
@@ -8,13 +9,18 @@ import { Contact } from 'src/app/models/contact';
 })
 export class ContactRowComponent {
   @Input() contact: Contact = {} as Contact; // cast leegjs object naar een Contact
-  @Output() del = new  EventEmitter<Contact>();
+  // @Output() del = new  EventEmitter<Contact>();
+
+  constructor(private contactService: ContactService) {
+  }
 
   edit(c: Contact): void {
     c.edit = !c.edit;
   }
 
+  save(): void { this.contact.edit = false; }
+
   delete(c: Contact): void {
-    this.del.emit(c);
+    this.contactService.delete(c);
   }
 }

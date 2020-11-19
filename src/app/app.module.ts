@@ -13,7 +13,7 @@ import { ContactListComponent } from './components/contact-list/contact-list.com
 import { ContactRowComponent } from './components/contact-row/contact-row.component';
 import { ContactFormModelDrivenComponent } from './components/contact-form-model-driven/contact-form-model-driven.component';
 
-let routes: Route[]=[
+const routes: Route[] = [
   {path:'datepicker', component: DatePickerComponent},
   {path:'formdemo', component: FormDemoComponent},
   {path: 'home', component: HomeComponent},
@@ -21,7 +21,7 @@ let routes: Route[]=[
 ];
 
 @NgModule({
-  declarations: [ //componenten van mijzelf
+  declarations: [ // componenten van mijzelf
     AppComponent,
     DatePickerComponent,
     FormDemoComponent,
@@ -31,7 +31,7 @@ let routes: Route[]=[
     ContactRowComponent,
     ContactFormModelDrivenComponent
   ],
-  imports: [      //componenten van een ander die ik nodig heb
+  imports: [      // componenten van een ander die ik nodig heb
     BrowserModule,
     AppRoutingModule,
     FormsModule,

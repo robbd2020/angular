@@ -7,20 +7,4 @@ import { Contact } from 'src/app/models/contact';
   styleUrls: ['./date-picker.component.css']
 })
 export class DatePickerComponent  {
-  
-  editLabel = 'Edit';
-
-
-  contactsList: Contact[] = [
-    { firstName: 'Sam', surname: 'Smith', email: 'sam.smith@music.com' },
-    { firstName: 'Frank', surname: 'Muscles', email: 'frank@muscles.com' },
-    { firstName: 'Eddy', surname: 'Valentino', email: 'eddy@valfam.co.uk' }
-  ];
-
-
-  addContact(c: Contact): void{
-    this.contactsList.push(c);
-  }
-
-
 }
