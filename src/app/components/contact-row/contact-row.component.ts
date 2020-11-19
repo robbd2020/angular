@@ -18,7 +18,10 @@ export class ContactRowComponent {
     c.edit = !c.edit;
   }
 
-  save(): void { this.contact.edit = false; }
+  save(c: Contact): void {
+    this.contact.edit = false;
+    this.contactService.edit(c);
+  }
 
   delete(c: Contact): void {
     this.contactService.delete(c);

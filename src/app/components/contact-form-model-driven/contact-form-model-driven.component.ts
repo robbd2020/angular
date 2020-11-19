@@ -9,10 +9,7 @@ import {ContactService} from "../../service/contact.service";
   styleUrls: ['./contact-form-model-driven.component.css']
 })
 export class ContactFormModelDrivenComponent {
-  @Output() addEvent = new EventEmitter<Contact>();
   addContactForm: FormGroup;
-
-  newContact = {} as Contact;
 
   constructor(private fb: FormBuilder, private contactService: ContactService) {
     this.addContactForm = this.fb.group({
@@ -23,9 +20,8 @@ export class ContactFormModelDrivenComponent {
   }
 
   addContact(): void {
-    this.addEvent.emit(this.newContact);
-    // this.contacts.push(this.newContact);
-    this.newContact = {} as Contact;
+    this.contactService.addContact(this.addContactForm.value);
+    this.addContactForm.reset();
   }
 
 }

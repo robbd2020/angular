@@ -12,6 +12,7 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
 import { ContactListComponent } from './components/contact-list/contact-list.component';
 import { ContactRowComponent } from './components/contact-row/contact-row.component';
 import { ContactFormModelDrivenComponent } from './components/contact-form-model-driven/contact-form-model-driven.component';
+import {HttpClientModule} from "@angular/common/http";
 
 const routes: Route[] = [
   {path:'datepicker', component: DatePickerComponent},
@@ -36,6 +37,7 @@ const routes: Route[] = [
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
