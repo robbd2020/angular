@@ -15,12 +15,7 @@ export class ContactService {
   constructor(private http: HttpClient) {
   }
 
-  contactsList: Contact[] = [
-    // {firstName: 'Sam', surname: 'Smith', email: 'sam.smith@music.com'},
-    // {firstName: 'Frank', surname: 'Muscles', email: 'frank@muscles.com'},
-    // {firstName: 'Eddy', surname: 'Valentino', email: 'eddy@valfam.co.uk'}
-  ];
-
+  contactsList: Contact[] = [];
 
   addContact(c: Contact): void {
     this.http.post<Contact>(this.url, c) // post contact to server
@@ -40,7 +35,7 @@ export class ContactService {
     return this.contactsUpdated$;
   }
 
-  edit(c: Contact): void{
+  edit(c: Contact): void {
     this.http.put(`${this.url}/${c.id}`, c).subscribe(() => this.getContacts());
   }
 
